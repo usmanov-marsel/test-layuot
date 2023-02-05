@@ -1,0 +1,219 @@
+.wrapper {
+  display: grid;
+	grid-template-areas:
+		"banner"
+		"content"
+		"spikers"
+    "footer";
+	grid-template-columns: 1fr;
+	grid-template-rows: 100vh auto 1fr auto;
+	min-height: 100vh;
+  font-family: 'Segoe UI';
+}
+
+.banner {
+  grid-area: banner;
+  background-color: var(--bg-banner);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-banner);
+}
+
+.banner__logo {
+  margin-bottom: 48px;
+}
+
+.banner__name {
+  text-align: center;
+  margin-bottom: 32px;
+  font-size: 36px;
+  line-height: 48px;
+  font-weight: normal;
+}
+
+.banner__date {
+  margin-bottom: 24px;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.banner__text {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.content {
+  grid-area: content;
+  display: grid;
+  grid-template-areas: "description registration";
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  font-size: 16px;
+  line-height: 21px;
+  padding: 48px 0;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.description {
+  text-align: center;
+}
+
+.description p:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.registration__title {
+  text-align: center;
+  font-size: 32px;
+  line-height: 43px;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.registration__description {
+  margin-bottom: 16px;
+}
+
+.filled-form {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.spikers {
+  grid-area: spikers;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 48px 0;
+}
+
+.spikers__title {
+  text-align: center;
+  font-size: 32px;
+  line-height: 43px;
+  margin-bottom: 32px;
+  font-weight: 600;
+}
+
+.wrapper-pikachu {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px 32px;
+}
+
+.pikachu {
+  text-align: center;
+  width: 220px;
+}
+
+.pikachu__avatar {
+  margin-bottom: 8px;
+  margin: 0 auto;
+}
+
+.pikachu__name {
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.pikachu__adjective {
+  font-style: italic;
+}
+
+footer {
+  grid-area: footer;
+  background-color: var(--bg-footer);
+  padding: 45px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer__logo {
+  margin-bottom: 16px;
+}
+
+.footer__info {
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--color-footer);
+}
+
+@media (max-width: 768px) {
+  .content {
+    grid-template-areas:
+    "description"
+    "registration";
+    grid-template-columns: 1fr;
+    padding: 48px 38px 42px;
+    gap: 48px;
+  }
+
+  .description {
+    text-align: start;
+  }
+
+  .spikers__title {
+    font-size: 0;
+    visibility: hidden;
+  }
+
+  .spikers__title::before {
+    font-size: 32px;
+    content: "Готовятся к общению";
+    visibility: visible;
+    text-align: center;
+  }
+}
+
+@media (max-width: 320px) {
+  .description {
+    display: none;
+  }
+
+  .content {
+    padding: 24px 15px;
+    gap: 0;
+  }
+
+  .registration__title {
+    text-align: start;
+  }
+
+  .filled-form {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .filled-form__key {
+    flex: 0 0 auto;
+  }
+
+  .filled-form__value {
+    margin-left: 8px;
+    flex: 1 0 50%;
+  }
+
+  .spikers {
+    padding: 24px 15px;
+  }
+  
+  .spikers__title {
+    text-align: start;
+    line-height: 35px;
+  }
+
+  footer {
+    padding: 20px 0;
+  }
+}
+
+:root {
+  --bg-banner: #17A2B8;
+  --color-banner: #fff;
+  --bg-footer: #F8F9FA;
+  --color-footer: #BABABA;
+}
